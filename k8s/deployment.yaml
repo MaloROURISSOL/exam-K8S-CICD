@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: alienogman/exam-cicd-k8s-main-cyrilsampedro:9b1f250
+          image: papautait/exam-api:b9d112ac306e9b92e49074dfb60062eda4b386fc
           ports:
             - containerPort: 3000
           envFrom:
