@@ -4,4 +4,3 @@ metadata:
   name: exam-api-config
 data:
   APP_PORT: "3000"
-  APP_VERSION: "dev"
