@@ -1,18 +1,17 @@
-# Build
-FROM node:24.13.0-alpine AS deps
+FROM node:22.22.0-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
 
-FROM node:24.13.0-alpine AS test
+FROM node:22.22.0-alpine AS test
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm test
 
 
-FROM node:24.13.0-alpine AS runtime
+FROM node:22.22.0-alpine AS runtime
 WORKDIR /app
 
 ENV NODE_ENV=production
